@@ -1,9 +1,20 @@
 def bubble_sort(array)
-  p array
+  array_length = array.length
+
+  array.each do
+
+    for i in 1..array_length - 1
+      if array[i-1] > array[i]
+        array[i-1], array[i] = array[i], array[i-1]
+      end
+    end
+
+  end
+  p "bubble_sort is #{array}"
 end
 
-
-
+# pseudocode from wikipedia:
+#
 # procedure bubbleSort(A : list of sortable items)
 #     n := length(A)
 #     repeat
@@ -18,4 +29,5 @@ end
 #     until n ≤ 1
 # end procedure
 
-bubble_sort([1,3,2])
+bubble_sort([4,3,78,2,0,2])
+#bubble_sort([1,3,2,4])
