@@ -1,14 +1,12 @@
+# frozen_string_literal: true
+
 def bubble_sort(array)
   array_length = array.length
 
   array.each do
-
-    for i in 1..array_length - 1
-      if array[i-1] > array[i]
-        array[i-1], array[i] = array[i], array[i-1]
-      end
+    (1..array_length - 1).each do |i|
+      array[i - 1], array[i] = array[i], array[i - 1] if array[i - 1] > array[i]
     end
-
   end
   p "bubble_sort is #{array}"
 end
@@ -26,8 +24,8 @@ end
 #             end if
 #         end for
 #         n := newn
-#     until n ≤ 1
+#     until n <= 1
 # end procedure
 
-bubble_sort([4,3,78,2,0,2])
-#bubble_sort([1,3,2,4])
+bubble_sort([4, 3, 78, 2, 0, 2])
+# bubble_sort([1,3,2,4])
